@@ -1,0 +1,23 @@
+.res-name {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100px;
+  letter-spacing: -0.3px;
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+.cuisine-container {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100px;
+}
