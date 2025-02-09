@@ -1,6 +1,8 @@
 import React from "react";
 import { IMG_ID } from "../../constants.ts";
 import "../RestaurantItem/RestaurantItem.css";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../utils/slice.ts";
 
 interface Props {
   data: any;
@@ -8,6 +10,12 @@ interface Props {
 }
 
 const RestaurantItem = ({ data }: Props) => {
+  const dispatch = useDispatch();
+
+  const handleCart = () => {
+    dispatch(addItem(data));
+  };
+
   return (
     <div className="res-item-main-container">
       <div>
@@ -31,7 +39,9 @@ const RestaurantItem = ({ data }: Props) => {
               borderRadius: "16px",
             }}
           />
-          <button className="add-button">ADD +</button>
+          <button className="add-button" onClick={handleCart}>
+            ADD +
+          </button>
         </div>
       </div>
     </div>

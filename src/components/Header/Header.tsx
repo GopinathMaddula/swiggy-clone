@@ -1,16 +1,28 @@
 import React, { useContext } from "react";
 import "./Header.css";
 import UserContext from "../../context.ts";
+import { useSelector } from "react-redux";
+import { Link } from "react-router";
 
 const Header = () => {
+  const cartLength = useSelector((state: any) => state.cart.items.length);
   const { loggedInUser } = useContext(UserContext);
   return (
     <header className="header-container">
       <div className="nav-container">
-        <h1>FOODY</h1>
+        <h1>FOO</h1>
         <ul className="header-menu-container">
           <li>Search</li>
-          <li>Cart</li>
+
+          <li style={{ fontWeight: "bold" }}>
+            <Link
+              to="/cart"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Cart {cartLength} items
+            </Link>
+          </li>
+
           <li>Sign in</li>
           <li>{loggedInUser}</li>
         </ul>
