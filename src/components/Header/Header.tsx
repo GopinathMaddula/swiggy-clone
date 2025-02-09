@@ -10,7 +10,10 @@ const Header = () => {
   return (
     <header className="header-container">
       <div className="nav-container">
-        <h1>FOO</h1>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <h1>FOO</h1>
+        </Link>
+
         <ul className="header-menu-container">
           <li>Search</li>
 

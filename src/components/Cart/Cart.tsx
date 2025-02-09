@@ -14,7 +14,7 @@ const Cart = () => {
       <h1>CART</h1>
       <button onClick={handleClear}>Clear Cart</button>
       {itemData?.length === 0 && <h1>Looks like your cart is Empty.</h1>}
-      {itemData?.map((eachItem) => (
+      {itemData?.map((eachItem: any) => (
         <div className="cart-container">
           <span>{eachItem?.card?.info?.name}</span>
           <span>₹{eachItem?.card?.info?.price / 100}</span>
